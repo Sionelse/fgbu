@@ -23,7 +23,7 @@ export default function Header() {
                 className="h-12 w-auto"
               />
               <img 
-              src="public/images/logo-text.png" // Абсолютный путь
+              src="/images/logo-text.png" // Абсолютный путь
               alt="ФЦССХ text"
               className="h-12 w-auto"
               />
