@@ -1,78 +1,96 @@
-import React, { useState } from 'react';
-import { Briefcase, ChevronRight } from 'lucide-react';
+import React from "react";
+import VacancyCard from "./VacancyCard";
 
-const vacancies = [
-  {
-    id: '1',
-    title: 'Врач-кардиолог',
-    department: 'Отделение кардиологии',
-    salary: 'от 120 000 ₽',
-    shortDescription: 'Требуется опытный врач-кардиолог для работы в стационаре',
-    imageUrl: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80'
-  },
-  {
-    id: '2',
-    title: 'Медицинская сестра',
-    department: 'Операционный блок',
-    salary: 'от 65 000 ₽',
-    shortDescription: 'Операционная медсестра в кардиохирургию',
-    imageUrl: 'https://images.unsplash.com/photo-1527613426441-4da17471b66d?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80'
-  },
-  {
-    id: '3',
-    title: 'Врач-анестезиолог',
-    department: 'Отделение анестезиологии',
-    salary: 'от 150 000 ₽',
-    shortDescription: 'Требуется врач анестезиолог-реаниматолог',
-    imageUrl: 'https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80'
-  }
-];
-
-export default function Vacancies() {
-  const [selectedVacancy, setSelectedVacancy] = useState(null);
+const Vacancies: React.FC = () => {
+  const vacancies = [
+    {
+      title: "Врач",
+      requirements: [
+        "Высшее медицинское образование.",
+        "Действующий сертификат специалиста по специальности.",
+        "Опыт работы от 2 лет.",
+        "Умение работать в команде, ответственность, внимательность.",
+      ],
+      responsibilities: [
+        "Оказание квалифицированной медицинской помощи пациентам.",
+        "Ведение медицинской документации.",
+        "Диагностика, лечение и профилактика заболеваний.",
+        "Консультирование пациентов.",
+      ],
+      benefits: [
+        "Стабильная заработная плата.",
+        "Премия по итогам года.",
+        "Полный социальный пакет.",
+        "Ежегодный оплачиваемый отпуск.",
+        "Доставка служебным транспортом (Южный и Северный микрорайоны).",
+        "Поддержка профессионального развития (курсы и тренинги).",
+      ],
+    },
+    {
+      title: "Медсестра",
+      requirements: [
+        "Среднее медицинское образование.",
+        "Действующий сертификат 'Сестринское дело'.",
+        "Опыт работы от 1 года (желательно).",
+        "Доброжелательность, аккуратность, ответственность.",
+      ],
+      responsibilities: [
+        "Выполнение назначений врача.",
+        "Проведение медицинских процедур (инъекции, капельницы, перевязки).",
+        "Контроль состояния пациентов.",
+        "Поддержание санитарных норм и порядка в рабочей зоне.",
+      ],
+      benefits: [
+        "Стабильная заработная плата.",
+        "Дополнительные выплаты за ночные смены.",
+        "Премия по итогам года.",
+        "Оплачиваемый отпуск.",
+        "Доставка служебным транспортом (Южный и Северный микрорайоны).",
+        "Дружный коллектив и поддержка в адаптации.",
+      ],
+    },
+    {
+      title: "Специалист по закупкам",
+      requirements: [
+        "Высшее образование (экономическое или техническое предпочтительно).",
+        "Опыт работы в закупках от 2 лет.",
+        "Знание процедур тендеров и контрактов.",
+        "Уверенный пользователь ПК, знание 1С и Excel.",
+        "Навыки переговоров, внимательность к деталям.",
+      ],
+      responsibilities: [
+        "Анализ потребностей предприятия и формирование заявок на закупку.",
+        "Работа с поставщиками: поиск, выбор, заключение договоров.",
+        "Контроль исполнения обязательств поставщиков.",
+        "Оптимизация затрат на закупки.",
+        "Ведение отчетности.",
+      ],
+      benefits: [
+        "Конкурентная заработная плата.",
+        "Премия по итогам года.",
+        "Оплачиваемый отпуск.",
+        "Доставка служебным транспортом (Южный и Северный микрорайоны).",
+        "Карьерный рост и профессиональное развитие.",
+      ],
+    },
+  ];
 
   return (
-    <section id="vacancies" className="py-20">
-      <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold text-center mb-12">Открытые вакансии</h2>
-        
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {vacancies.map((vacancy) => (
-            <div 
-              key={vacancy.id}
-              className="bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow overflow-hidden cursor-pointer"
-              onClick={() => setSelectedVacancy(vacancy)}
-            >
-              <div className="relative h-48">
-                <img 
-                  src={vacancy.imageUrl}
-                  alt={vacancy.title}
-                  className="absolute inset-0 w-full h-full object-cover"
-                />
-              </div>
-              <div className="p-6">
-                <div className="flex items-center justify-between mb-2">
-                  <h3 className="text-xl font-semibold">{vacancy.title}</h3>
-                  <Briefcase className="h-5 w-5 text-blue-500" />
-                </div>
-                <p className="text-gray-600 mb-2">{vacancy.department}</p>
-                <p className="text-green-600 font-semibold mb-4">{vacancy.salary}</p>
-                <p className="text-gray-600">{vacancy.shortDescription}</p>
-                <button className="mt-4 inline-flex items-center text-blue-500 hover:text-blue-600">
-                  Подробнее
-                  <ChevronRight className="ml-1 h-4 w-4" />
-                </button>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        <div className="mt-12 text-center">
-          <button className="bg-blue-500 text-white px-8 py-3 rounded-lg hover:bg-blue-600 transition-colors">
-            Отправить резюме
-          </button>
-        </div>
+    <section id="vacancies" className="bg-gray-100 py-8">
+      <div className="container mx-auto">
+        <h1 className="text-3xl font-bold text-center mb-8">Наши вакансии</h1>
+        {vacancies.map((vacancy, index) => (
+          <VacancyCard
+            key={index}
+            title={vacancy.title}
+            requirements={vacancy.requirements}
+            responsibilities={vacancy.responsibilities}
+            benefits={vacancy.benefits}
+          />
+        ))}
       </div>
     </section>
   );
-}
+};
+
+export default Vacancies;

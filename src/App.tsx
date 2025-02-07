@@ -7,6 +7,7 @@ import Vacancies from './components/Vacancies';
 import Team from './components/Team';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import ContactsBlock from './components/ContactsBlock';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
       <About />
       <News />
       <Vacancies />
+      <ContactsBlock /> {/* Блок контактов */}
       <Team />
       <Contact />
       <Footer />
