@@ -2,7 +2,7 @@ import React from "react";
 
 interface NewsBlockProps {
   title: string;
-  description: string;
+  description: string | React.ReactNode; // Разрешаем description быть строкой или JSX
   videoUrl: string;
 }
 
@@ -20,6 +20,7 @@ const NewsBlock: React.FC<NewsBlockProps> = ({ title, description, videoUrl }) =
           allowFullScreen
           title="News Video"
           className="rounded-lg"
+          loading="lazy" // Добавляем ленивую загрузку
         ></iframe>
       </div>
     </div>
