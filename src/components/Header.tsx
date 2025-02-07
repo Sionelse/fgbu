@@ -63,7 +63,7 @@ export default function Header() {
             onClick={toggleModal}
             className="ml-4 bg-[#009ba1] text-white px-4 py-2 rounded-lg shadow-md hover:bg-[#532c91] transition"
           >
-            <Calendar className="mr-2" /> Открыть модальное окно
+            <Calendar className="mr-2" /> Записаться
           </button>
         </div>
 
@@ -108,7 +108,7 @@ export default function Header() {
               ✕
             </button>
             <h2 className="text-xl font-bold mb-4 text-gray-800">
-              <Calendar className="inline-block mr-2" /> Записаться и открыть список врачей
+              <Calendar className="inline-block mr-2" /> Записаться к врачу онлайн:
             </h2>
             <p className="text-gray-600">
               Выберите врача и запишитесь на прием.
