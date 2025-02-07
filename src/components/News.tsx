@@ -29,8 +29,8 @@ export default function News() {
                 <div className="aspect-w-16 aspect-h-9 mb-6">
                   <iframe 
                     src="https://vkvideo.ru/video_ext.php?oid=-73985648&id=456249075&hd=2&autoplay=1" 
-                    width="640"
-                    height="360"
+                    width="440"
+                    height="600"
                     frameBorder="0" 
                     allowFullScreen 
                     className="w-full h-full rounded-lg shadow-lg"
