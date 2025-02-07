@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { ClipboardList, Briefcase, Heart, CheckCircle } from "lucide-react"; // Импортируем иконки
 
 interface VacancyProps {
   title: string;
@@ -24,42 +25,57 @@ const VacancyCard: React.FC<VacancyProps> = ({
   };
 
   return (
-    <div className="vacancy-card bg-white shadow-md rounded-lg p-6 mb-6">
-      <h2 className="text-2xl font-bold mb-4">{title}</h2>
+    <div className="bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 p-6">
+      <h2 className="text-2xl font-bold mb-4 text-[#532c91]">{title}</h2>
 
-      <div className="mb-4">
-        <h3 className="text-lg font-semibold mb-2">Требования:</h3>
-        <ul className="list-disc list-inside">
-          {requirements.map((item, index) => (
-            <li key={index}>{item}</li>
+      {/* Требования */}
+      <div className="mb-6">
+        <h3 className="text-xl font-semibold mb-2 flex items-center">
+          <ClipboardList className="mr-2 text-[#009ba1]" /> Требования
+        </h3>
+        <ul className="space-y-2">
+          {requirements.map((req, i) => (
+            <li key={i} className="flex items-center">
+              <CheckCircle className="mr-2 text-green-500" /> {req}
+            </li>
           ))}
         </ul>
       </div>
 
-      <div className="mb-4">
-        <h3 className="text-lg font-semibold mb-2">Обязанности:</h3>
-        <ul className="list-disc list-inside">
-          {responsibilities.map((item, index) => (
-            <li key={index}>{item}</li>
+      {/* Обязанности */}
+      <div className="mb-6">
+        <h3 className="text-xl font-semibold mb-2 flex items-center">
+          <Briefcase className="mr-2 text-[#009ba1]" /> Обязанности
+        </h3>
+        <ul className="space-y-2">
+          {responsibilities.map((resp, i) => (
+            <li key={i} className="flex items-center">
+              <CheckCircle className="mr-2 text-green-500" /> {resp}
+            </li>
           ))}
         </ul>
       </div>
 
-      <div className="mb-4">
-        <h3 className="text-lg font-semibold mb-2">Наши преимущества:</h3>
-        <ul className="list-disc list-inside">
-          {benefits.map((item, index) => (
-            <li key={index}>{item}</li>
+      {/* Преимущества */}
+      <div className="mb-6">
+        <h3 className="text-xl font-semibold mb-2 flex items-center">
+          <Heart className="mr-2 text-[#009ba1]" /> Преимущества
+        </h3>
+        <ul className="space-y-2">
+          {benefits.map((benefit, i) => (
+            <li key={i} className="flex items-center">
+              <CheckCircle className="mr-2 text-green-500" /> {benefit}
+            </li>
           ))}
         </ul>
       </div>
 
-      {/* Кнопка для открытия формы */}
+      {/* Кнопка "Откликнуться" */}
       <button
         onClick={toggleForm}
-        className="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700"
+        className="w-full bg-gradient-to-r from-[#532c91] to-[#009ba1] text-white py-2 rounded-lg hover:from-[#009ba1] hover:to-[#532c91] transition-all duration-300"
       >
-        Оставить резюме
+        Откликнуться
       </button>
 
       {/* Форма */}
@@ -95,13 +111,13 @@ const VacancyCard: React.FC<VacancyProps> = ({
               Комментарий:
               <textarea
                 className="w-full p-2 border rounded-md"
-                placeholder="Напишите, что вас интересует"
+                placeholder="Сопроводительное письмо"
               ></textarea>
             </label>
           </div>
           <button
             type="submit"
-            className="bg-green-600 text-white px-4 py-2 rounded-md hover:bg-green-700"
+            className="w-full bg-gradient-to-r from-[#532c91] to-[#009ba1] text-white py-2 rounded-lg hover:from-[#009ba1] hover:to-[#532c91] transition-all duration-300"
           >
             Отправить
           </button>

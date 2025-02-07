@@ -1,4 +1,5 @@
 import React from "react";
+import VacancyCard from "./VacancyCard";
 import { ClipboardList, Briefcase, CheckCircle, Heart, Truck, Users, BookOpen, Wallet } from "lucide-react";
 
 const Vacancies: React.FC = () => {
@@ -81,61 +82,13 @@ const Vacancies: React.FC = () => {
         <h1 className="text-4xl font-bold text-center mb-8 text-[#532c91]">Наши вакансии</h1>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {vacancies.map((vacancy, index) => (
-            <div
+            <VacancyCard
               key={index}
-              className="bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 p-6"
-            >
-              <h2 className="text-2xl font-bold mb-4 text-[#532c91]">{vacancy.title}</h2>
-
-              {/* Требования */}
-              <div className="mb-6">
-                <h3 className="text-xl font-semibold mb-2 flex items-center">
-                  <ClipboardList className="mr-2 text-[#009ba1]" /> Требования
-                </h3>
-                <ul className="space-y-2">
-                  {vacancy.requirements.map((req, i) => (
-                    <li key={i} className="flex items-center">
-                      <CheckCircle className="mr-2 text-green-500" /> {req}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              {/* Обязанности */}
-              <div className="mb-6">
-                <h3 className="text-xl font-semibold mb-2 flex items-center">
-                  <Briefcase className="mr-2 text-[#009ba1]" /> Обязанности
-                </h3>
-                <ul className="space-y-2">
-                  {vacancy.responsibilities.map((resp, i) => (
-                    <li key={i} className="flex items-center">
-                      <CheckCircle className="mr-2 text-green-500" /> {resp}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              {/* Преимущества */}
-              <div className="mb-6">
-                <h3 className="text-xl font-semibold mb-2 flex items-center">
-                  <Heart className="mr-2 text-[#009ba1]" /> Преимущества
-                </h3>
-                <ul className="space-y-2">
-                  {vacancy.benefits.map((benefit, i) => (
-                    <li key={i} className="flex items-center">
-                      <CheckCircle className="mr-2 text-green-500" /> {benefit}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              {/* Кнопка "Откликнуться" */}
-              <button
-                className="w-full bg-gradient-to-r from-[#532c91] to-[#009ba1] text-white py-2 rounded-lg hover:from-[#009ba1] hover:to-[#532c91] transition-all duration-300"
-              >
-                Откликнуться
-              </button>
-            </div>
+              title={vacancy.title}
+              requirements={vacancy.requirements}
+              responsibilities={vacancy.responsibilities}
+              benefits={vacancy.benefits}
+            />
           ))}
         </div>
       </div>
