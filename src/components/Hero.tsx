@@ -7,7 +7,7 @@ export default function Hero() {
       <div 
         className="absolute inset-0 bg-cover bg-center z-0"
         style={{
-          backgroundImage: 'url("https://avatars.mds.yandex.net/get-altay/6950449/2a0000018487fae52a94c1b98e437511fc19/XXXL")',
+          backgroundImage: 'url("images/XXXL.webp")',
         }}
       >
         <div 

@@ -7,9 +7,9 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="flex items-center mb-6 md:mb-0">
             <img 
-              src="https://www.cardiokhv.ru/img/logo_new.png"
+              src="images/logo_new.png"
               alt="ФЦССХ Logo"
-              className="h-12 w-auto brightness-0 invert"
+              className="h-12 w-auto"
             />
             <span className="ml-2 text-xl font-semibold">ФЦССХ Хабаровск</span>
           </div>

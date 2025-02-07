@@ -23,7 +23,7 @@ export default function Header() {
         <div className="flex justify-between items-center">
           <div className="flex items-center">
             <img 
-              src="https://www.cardiokhv.ru/img/logo_new.png"
+              src="images/logo_new.png"
               alt="ФЦССХ Logo"
               className="h-12 w-auto"
             />
@@ -114,7 +114,7 @@ export default function Header() {
               Выберите врача и запишитесь на прием.
             </p>
             <ul className="mt-4 space-y-3 text-gray-800">
-              <li><User className="inline-block mr-2" /> Кардиолог Иванов Иван Иванович</li>
+              <li><User className="inline-block mr-2" /> Кардиолог Лесных Александра Александровна</li>
               <li><User className="inline-block mr-2" /> Хирург Петров Петр Петрович</li>
               <li><User className="inline-block mr-2" /> Терапевт Сидоров Сергей Сергеевич</li>
             </ul>
