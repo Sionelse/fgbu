@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Menu, X, Heart, User, Calendar, Phone, Info } from 'lucide-react'; // Импортируем иконки из lucide-react
+import { Menu, X, Heart, User, Calendar, Phone, Info } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 export default function Header() {
@@ -7,36 +7,32 @@ export default function Header() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isInfoOpen, setIsInfoOpen] = useState(false);
 
-  // Открытие и закрытие модального окна
-  const toggleModal = () => {
-    setIsModalOpen(!isModalOpen);
-  };
-
-  // Открытие блока с информацией
-  const toggleInfo = () => {
-    setIsInfoOpen(!isInfoOpen);
-  };
+  const toggleModal = () => setIsModalOpen(!isModalOpen);
+  const toggleInfo = () => setIsInfoOpen(!isInfoOpen);
 
   return (
     <header className="bg-gradient-to-r from-[#004AAD] to-[#0078FF] shadow-md fixed w-full top-0 z-50">
       <nav className="container mx-auto px-4 py-4">
         <div className="flex justify-between items-center">
+          {/* Логотип и название */}
           <div className="flex items-center">
             <img 
-              src="images/logo_new.png"
+              src="/images/logo_new.png" // Абсолютный путь
               alt="ФЦССХ Logo"
               className="h-12 w-auto"
             />
-            <span className="ml-2 text-xl font-semibold text-white">ФЦССХ Хабаровск</span>
+            <span className="ml-2 text-lg font-semibold text-white hidden sm:block">ФЦССХ Хабаровск</span>
           </div>
 
+          {/* Кнопка "Подробнее о центре" */}
           <button 
             onClick={toggleInfo}
-            className="px-4 py-2 bg-gradient-to-r from-[#009ba1] to-[#532c91] text-white rounded-lg shadow-md hover:shadow-lg hover:from-[#532c91] hover:to-[#009ba1] transition"
+            className="hidden sm:flex items-center px-4 py-2 bg-gradient-to-r from-[#009ba1] to-[#532c91] text-white rounded-lg shadow-md hover:shadow-lg hover:from-[#532c91] hover:to-[#009ba1] transition"
           >
             <Info className="mr-2" /> Подробнее о центре
           </button>
 
+          {/* Основное меню */}
           <div className="hidden md:flex space-x-8">
             <a href="#about" className="text-white hover:text-[#532c91] transition">
               <Heart className="inline-block mr-2" /> О нас
@@ -52,6 +48,7 @@ export default function Header() {
             </a>
           </div>
 
+          {/* Кнопка меню для мобильных устройств */}
           <button 
             className="md:hidden"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -59,14 +56,16 @@ export default function Header() {
             {isMenuOpen ? <X className="text-white" /> : <Menu className="text-white" />}
           </button>
 
+          {/* Кнопка "Записаться" */}
           <button 
             onClick={toggleModal}
-            className="ml-4 bg-[#009ba1] text-white px-4 py-2 rounded-lg shadow-md hover:bg-[#532c91] transition"
+            className="hidden sm:flex items-center ml-4 bg-[#009ba1] text-white px-4 py-2 rounded-lg shadow-md hover:bg-[#532c91] transition"
           >
             <Calendar className="mr-2" /> Записаться
           </button>
         </div>
 
+        {/* Мобильное меню */}
         {isMenuOpen && (
           <div className="md:hidden mt-4 space-y-4">
             <a href="#about" className="block text-[#009ba1] hover:text-[#532c91] py-2">
@@ -81,11 +80,23 @@ export default function Header() {
             <a href="#contacts" className="block text-[#009ba1] hover:text-[#532c91] py-2">
               <Phone className="inline-block mr-2" /> Контакты
             </a>
+            <button 
+              onClick={toggleInfo}
+              className="block w-full text-left text-[#009ba1] hover:text-[#532c91] py-2"
+            >
+              <Info className="inline-block mr-2" /> Подробнее о центре
+            </button>
+            <button 
+              onClick={toggleModal}
+              className="block w-full text-left text-[#009ba1] hover:text-[#532c91] py-2"
+            >
+              <Calendar className="inline-block mr-2" /> Записаться
+            </button>
           </div>
         )}
       </nav>
 
-      {/* Модальное окно с анимацией */}
+      {/* Модальные окна (остаются без изменений) */}
       {isModalOpen && (
         <motion.div 
           className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50"
@@ -95,7 +106,7 @@ export default function Header() {
           transition={{ duration: 0.5 }}
         >
           <motion.div 
-            className="bg-white rounded-lg shadow-lg p-6 max-w-md w-full relative"
+            className="bg-white rounded-lg shadow-lg p-6 max-w-md w-full relative mx-4"
             initial={{ scale: 0.8 }}  
             animate={{ scale: 1 }}    
             exit={{ scale: 0.8 }}     
@@ -159,7 +170,7 @@ export default function Header() {
           exit={{ opacity: 0 }}
           transition={{ duration: 0.3 }}
         >
-          <div className="max-w-lg w-full bg-white rounded-lg shadow-lg p-6 relative">
+          <div className="max-w-lg w-full bg-white rounded-lg shadow-lg p-6 relative mx-4">
             <button
               onClick={toggleInfo}
               className="absolute top-2 right-2 text-gray-400 hover:text-gray-600"
