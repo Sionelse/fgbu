@@ -12,27 +12,33 @@ export default function Header() {
 
   return (
     <header className="bg-gradient-to-r from-[#004AAD] to-[#0078FF] shadow-md fixed w-full top-0 z-50">
-      <nav className="container mx-auto px-4 py-4">
+      <nav className="container mx-auto px-4 py-4 min-w-[320px]"> {/* Минимальная ширина */}
         <div className="flex justify-between items-center">
-          {/* Логотип и название */}
+          {/* Логотип с текстом */}
           <div className="flex items-center">
-            <img 
-              src="/images/logo_new.png" // Абсолютный путь
-              alt="ФЦССХ Logo"
+            <div className="relative">
+              <img 
+                src="/images/logo_new.png" // Абсолютный путь
+                alt="ФЦССХ Logo"
+                className="h-12 w-auto"
+              />
+              <img 
+              src="public/images/logo-text.png" // Абсолютный путь
+              alt="ФЦССХ text"
               className="h-12 w-auto"
-            />
-            <span className="ml-2 text-lg font-semibold text-white hidden sm:block">ФЦССХ Хабаровск</span>
+              />
+            </div>
           </div>
 
-          {/* Кнопка "Подробнее о центре" */}
+          {/* Кнопка "Подробнее о центре" (скрыта на мобильных устройствах) */}
           <button 
             onClick={toggleInfo}
-            className="hidden sm:flex items-center px-4 py-2 bg-gradient-to-r from-[#009ba1] to-[#532c91] text-white rounded-lg shadow-md hover:shadow-lg hover:from-[#532c91] hover:to-[#009ba1] transition"
+            className="hidden sm:flex items-center px-4 py-2 bg-gradient-to-r from-[#009ba1] to-[#532c91] text-white rounded-lg shadow-md hover:shadow-lg hover:from-[#532c91] hover:to-[#009ba1] transition text-sm"
           >
             <Info className="mr-2" /> Подробнее о центре
           </button>
 
-          {/* Основное меню */}
+          {/* Основное меню (скрыто на мобильных устройствах) */}
           <div className="hidden md:flex space-x-8">
             <a href="#about" className="text-white hover:text-[#532c91] transition">
               <Heart className="inline-block mr-2" /> О нас
@@ -48,55 +54,49 @@ export default function Header() {
             </a>
           </div>
 
+          {/* Кнопка "Записаться" (видна на всех устройствах) */}
+          <button 
+            onClick={toggleModal}
+            className="flex items-center bg-[#009ba1] text-white px-4 py-2 rounded-lg shadow-md hover:bg-[#532c91] transition text-sm"
+          >
+            <Calendar className="mr-2" /> Записаться
+          </button>
+
           {/* Кнопка меню для мобильных устройств */}
           <button 
-            className="md:hidden"
+            className="md:hidden ml-4"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             {isMenuOpen ? <X className="text-white" /> : <Menu className="text-white" />}
           </button>
-
-          {/* Кнопка "Записаться" */}
-          <button 
-            onClick={toggleModal}
-            className="hidden sm:flex items-center ml-4 bg-[#009ba1] text-white px-4 py-2 rounded-lg shadow-md hover:bg-[#532c91] transition"
-          >
-            <Calendar className="mr-2" /> Записаться
-          </button>
         </div>
 
-        {/* Мобильное меню */}
+        {/* Мобильное меню (открывается по клику) */}
         {isMenuOpen && (
-          <div className="md:hidden mt-4 space-y-4">
-            <a href="#about" className="block text-[#009ba1] hover:text-[#532c91] py-2">
+          <div className="md:hidden mt-4 space-y-4 bg-[#004AAD] p-4 rounded-lg">
+            <a href="#about" className="block text-white hover:text-[#532c91] py-2">
               <Heart className="inline-block mr-2" /> О нас
             </a>
-            <a href="#vacancies" className="block text-[#009ba1] hover:text-[#532c91] py-2">
+            <a href="#vacancies" className="block text-white hover:text-[#532c91] py-2">
               <User className="inline-block mr-2" /> Вакансии
             </a>
-            <a href="#team" className="block text-[#009ba1] hover:text-[#532c91] py-2">
+            <a href="#team" className="block text-white hover:text-[#532c91] py-2">
               <User className="inline-block mr-2" /> Команда
             </a>
-            <a href="#contacts" className="block text-[#009ba1] hover:text-[#532c91] py-2">
+            <a href="#contacts" className="block text-white hover:text-[#532c91] py-2">
               <Phone className="inline-block mr-2" /> Контакты
             </a>
             <button 
               onClick={toggleInfo}
-              className="block w-full text-left text-[#009ba1] hover:text-[#532c91] py-2"
+              className="block w-full text-left text-white hover:text-[#532c91] py-2"
             >
               <Info className="inline-block mr-2" /> Подробнее о центре
-            </button>
-            <button 
-              onClick={toggleModal}
-              className="block w-full text-left text-[#009ba1] hover:text-[#532c91] py-2"
-            >
-              <Calendar className="inline-block mr-2" /> Записаться
             </button>
           </div>
         )}
       </nav>
 
-      {/* Модальные окна (остаются без изменений) */}
+      {/* Модальное окно с анимацией */}
       {isModalOpen && (
         <motion.div 
           className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50"
