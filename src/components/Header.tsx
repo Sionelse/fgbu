@@ -23,7 +23,7 @@ export default function Header() {
             />
             <span className="ml-2 text-xl font-semibold text-[#532c91]">ФЦССХ Хабаровск</span>
           </div>
-          
+
           <button className="px-4 py-2 bg-gradient-to-r from-blue-500 to-blue-600 text-white rounded-lg shadow-md hover:shadow-lg hover:from-blue-600 hover:to-blue-700 transition">
             Подробнее
           </button>
@@ -83,10 +83,37 @@ export default function Header() {
             >
               ✕
             </button>
-            <h2 className="text-xl font-bold mb-4 text-gray-800">Добро пожаловать в наш кардиоцентр</h2>
+            <h2 className="text-xl font-bold mb-4 text-gray-800">Записаться и открыть список врачей</h2>
             <p className="text-gray-600">
-              Здесь вы можете узнать больше о нашем центре или оставить заявку.
+              Выберите врача и запишитесь на прием.
             </p>
+            <ul className="mt-4 space-y-3 text-gray-800">
+              <li>Кардиолог Иванов Иван Иванович</li>
+              <li>Хирург Петров Петр Петрович</li>
+              <li>Терапевт Сидоров Сергей Сергеевич</li>
+            </ul>
+            <form className="mt-4 space-y-4">
+              <input 
+                type="text" 
+                placeholder="Ваше имя" 
+                className="w-full p-2 border border-gray-300 rounded-md"
+              />
+              <input 
+                type="tel" 
+                placeholder="Номер телефона" 
+                className="w-full p-2 border border-gray-300 rounded-md"
+              />
+              <textarea 
+                placeholder="Комментарий" 
+                className="w-full p-2 border border-gray-300 rounded-md"
+              />
+              <button 
+                type="submit" 
+                className="w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700 transition"
+              >
+                Отправить
+              </button>
+            </form>
             <button
               onClick={toggleModal}
               className="mt-4 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition"
