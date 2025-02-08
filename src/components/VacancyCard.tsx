@@ -31,12 +31,12 @@ const VacancyCard: React.FC<VacancyProps> = ({
       {/* Требования */}
       <div className="mb-6">
         <h3 className="text-xl font-semibold mb-2 flex items-center">
-          <ClipboardList className="mr-2 text-[#009ba1]" /> Требования
+          <ClipboardList className="mr-2 text-[#009ba1] h-6 w-6" /> Требования
         </h3>
         <ul className="space-y-2">
           {requirements.map((req, i) => (
             <li key={i} className="flex items-center">
-              <CheckCircle className="mr-2 text-green-500" /> {req}
+              <CheckCircle className="mr-2 text-green-500 h-5 w-5" /> {req}
             </li>
           ))}
         </ul>
@@ -45,12 +45,12 @@ const VacancyCard: React.FC<VacancyProps> = ({
       {/* Обязанности */}
       <div className="mb-6">
         <h3 className="text-xl font-semibold mb-2 flex items-center">
-          <Briefcase className="mr-2 text-[#009ba1]" /> Обязанности
+          <Briefcase className="mr-2 text-[#009ba1] h-6 w-6" /> Обязанности
         </h3>
         <ul className="space-y-2">
           {responsibilities.map((resp, i) => (
             <li key={i} className="flex items-center">
-              <CheckCircle className="mr-2 text-green-500" /> {resp}
+              <CheckCircle className="mr-2 text-green-500 h-5 w-5" /> {resp}
             </li>
           ))}
         </ul>
@@ -59,12 +59,12 @@ const VacancyCard: React.FC<VacancyProps> = ({
       {/* Преимущества */}
       <div className="mb-6">
         <h3 className="text-xl font-semibold mb-2 flex items-center">
-          <Heart className="mr-2 text-[#009ba1]" /> Преимущества
+          <Heart className="mr-2 text-[#009ba1] h-6 w-6" /> Преимущества
         </h3>
         <ul className="space-y-2">
           {benefits.map((benefit, i) => (
             <li key={i} className="flex items-center">
-              <CheckCircle className="mr-2 text-green-500" /> {benefit}
+              <CheckCircle className="mr-2 text-green-500 h-5 w-5" /> {benefit}
             </li>
           ))}
         </ul>
@@ -111,7 +111,7 @@ const VacancyCard: React.FC<VacancyProps> = ({
               Комментарий:
               <textarea
                 className="w-full p-2 border rounded-md"
-                placeholder="Сопроводительное письмо"
+                placeholder="Напишите, что вас интересует"
               ></textarea>
             </label>
           </div>

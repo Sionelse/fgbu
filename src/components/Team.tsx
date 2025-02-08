@@ -4,24 +4,31 @@ import { Quote } from 'lucide-react';
 const employees = [
   {
     id: '1',
-    name: 'Анна Петрова',
-    position: 'Врач-кардиолог',
-    story: 'Работа в центре дала мне возможность развиваться профессионально и помогать людям.',
-    imageUrl: 'https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80'
+    name: 'Наталья Милавитская',
+    position: 'Рентгенолаборант',
+    story: 'Счастлива работать в центре, где созданы комфортны условия для сотрудников, а также системно проводится обучение.',
+    imageUrl: '/images/photo_2025-02-08_11-58-15.png'
   },
   {
     id: '2',
-    name: 'Михаил Иванов',
-    position: 'Кардиохирург',
+    name: 'Юлия Асеева',
+    position: 'Врач сердечнососудистой хирургии',
     story: 'Здесь я работаю с передовыми технологиями и замечательной командой профессионалов.',
-    imageUrl: 'https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80'
+    imageUrl: '/images/jyuJPZK4Yt11NKHldC6lu0HyaTIRjEBGBATL5KZehsclVRGy8nmQeCsngDT2-m--2nioXXzh7rXfhTpBeLakuqYLvB6_hB75Vg7B5XQupbtB8nUiOvw.webp'
   },
   {
     id: '3',
-    name: 'Елена Смирнова',
-    position: 'Старшая медсестра',
+    name: 'Полина Королькова',
+    position: 'Старшая медсестра  кардиохирургического отделения',
     story: 'За 5 лет работы в центре я выросла от обычной медсестры до руководителя отделения.',
-    imageUrl: 'https://images.unsplash.com/photo-1571772996211-2f02c9727629?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80'
+    imageUrl: '/images/korol.png'
+  },
+  {
+    id: '4',
+    name: 'Варвара Ярославская',
+    position: 'Заведующий консульиативно-диагностическим отделением',
+    story: 'Работа в центре дала мне возможность развиваться профессионально и помогать людям.',
+    imageUrl: '/images/jyuJPZK4Yt11NKHldC6lu0HyaTIRjEBGBATL5KZehsclVRGy8nmQeCUljzXx-nSo0XmrXn3q57XE-V9HeP6JsKYVvB2ilAPiWADG0mwhr7pcpCklEPx4.png'
   }
 ];
 
