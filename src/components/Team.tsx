@@ -12,7 +12,7 @@ const employees = [
   {
     id: '2',
     name: 'Юлия Асеева',
-    position: 'Врач сердечнососудистой хирургии',
+    position: 'Врач сердечнососудистый хирург',
     story: 'Здесь я работаю с передовыми технологиями и замечательной командой профессионалов.',
     imageUrl: '/images/jyuJPZK4Yt11NKHldC6lu0HyaTIRjEBGBATL5KZehsclVRGy8nmQeCsngDT2-m--2nioXXzh7rXfhTpBeLakuqYLvB6_hB75Vg7B5XQupbtB8nUiOvw.webp'
   },
@@ -26,7 +26,7 @@ const employees = [
   {
     id: '4',
     name: 'Варвара Ярославская',
-    position: 'Заведующий консульиативно-диагностическим отделением',
+    position: 'Заведующий консультативно-диагностическим отделением',
     story: 'Работа в центре дала мне возможность развиваться профессионально и помогать людям.',
     imageUrl: '/images/jyuJPZK4Yt11NKHldC6lu0HyaTIRjEBGBATL5KZehsclVRGy8nmQeCUljzXx-nSo0XmrXn3q57XE-V9HeP6JsKYVvB2ilAPiWADG0mwhr7pcpCklEPx4.png'
   }
