@@ -12,25 +12,23 @@ export default function Header() {
 
   return (
     <header className="bg-gradient-to-r from-[#004AAD] to-[#0078FF] shadow-md fixed w-full top-0 z-50">
-      <nav className="container mx-auto px-4 py-4 min-w-[320px]"> {/* Минимальная ширина */}
+      <nav className="container mx-auto px-4 py-4 min-w-[320px]">
         <div className="flex justify-between items-center">
-          {/* Логотип с текстом */}
           <div className="flex items-center">
             <div className="relative">
               <img 
-                src="/images/logo_new.png" // Абсолютный путь
+                src="/images/logo_new.png" 
                 alt="ФЦССХ Logo"
                 className="h-12 w-auto"
               />
               <img 
-              src="/images/logo-text.png" // Абсолютный путь
+              src="/images/logo-text.png" 
               alt="ФЦССХ text"
               className="h-12 w-auto"
               />
             </div>
           </div>
 
-          {/* Кнопка "Подробнее о центре" (скрыта на мобильных устройствах) */}
           <button 
             onClick={toggleInfo}
             className="hidden sm:flex items-center px-4 py-2 bg-gradient-to-r from-[#009ba1] to-[#532c91] text-white rounded-lg shadow-md hover:shadow-lg hover:from-[#532c91] hover:to-[#009ba1] transition text-sm"
@@ -38,7 +36,6 @@ export default function Header() {
             <Info className="mr-2" /> Подробнее о центре
           </button>
 
-          {/* Основное меню (скрыто на мобильных устройствах) */}
           <div className="hidden md:flex space-x-8">
             <a href="#about" className="text-white hover:text-[#532c91] transition">
               <Heart className="inline-block mr-2" /> О нас
@@ -54,15 +51,13 @@ export default function Header() {
             </a>
           </div>
 
-          {/* Кнопка "Записаться" (видна на всех устройствах) */}
           <button 
             onClick={toggleModal}
             className="flex items-center bg-[#009ba1] text-white px-4 py-2 rounded-lg shadow-md hover:bg-[#532c91] transition text-sm"
           >
-            <Calendar className="mr-2" /> Записаться
+            <Calendar className="mr-2" /> Запись на прием
           </button>
 
-          {/* Кнопка меню для мобильных устройств */}
           <button 
             className="md:hidden ml-4"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -71,7 +66,6 @@ export default function Header() {
           </button>
         </div>
 
-        {/* Мобильное меню (открывается по клику) */}
         {isMenuOpen && (
           <div className="md:hidden mt-4 space-y-4 bg-[#004AAD] p-4 rounded-lg">
             <a href="#about" className="block text-white hover:text-[#532c91] py-2">
@@ -96,7 +90,6 @@ export default function Header() {
         )}
       </nav>
 
-      {/* Модальное окно с анимацией */}
       {isModalOpen && (
         <motion.div 
           className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50"
@@ -161,7 +154,6 @@ export default function Header() {
         </motion.div>
       )}
 
-      {/* Блок с информацией о центре */}
       {isInfoOpen && (
         <motion.div 
           className="fixed inset-0 bg-white bg-opacity-90 flex items-center justify-center z-50 p-6"

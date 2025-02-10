@@ -1,5 +1,6 @@
 import React from 'react';
 import { ArrowRight } from 'lucide-react';
+import '/src/index.css'
 
 export default function Hero() {
   return (
@@ -26,19 +27,19 @@ export default function Hero() {
         </p>
         <div className="flex flex-col md:flex-row gap-4 justify-center">
           <a 
-            href="#about"
-            className="inline-flex items-center px-6 py-3 bg-white text-[#532c91] rounded-lg hover:bg-[#532c91] hover:text-white transition-colors"
-          >
-            О нас
-            <ArrowRight className="ml-2 h-5 w-5" />
-          </a>
-          <a 
-            href="#vacancies"
-            className="inline-flex items-center px-6 py-3 bg-[#009ba1] text-white rounded-lg hover:bg-[#532c91] transition-colors"
-          >
-            Смотреть вакансии
-            <ArrowRight className="ml-2 h-5 w-5" />
-          </a>
+  href="#about"
+  className="inline-flex items-center px-14 py-8 bg-white text-[#532c91] rounded-lg hover:bg-[#532c91] hover:text-white transition-colors"
+>
+  <span className="text-lg">О нас</span> {/* Добавлен класс text-lg */}
+  <ArrowRight className="ml-3 h-8 w-8" />
+</a>
+<a 
+  href="#vacancies"
+  className="inline-flex items-center px-14 py-8 bg-[#009ba1] text-white rounded-lg hover:bg-[#532c91] transition-colors"
+>
+  <span className="text-lg">Смотреть вакансии</span> {/* Добавлен класс text-lg */}
+  <ArrowRight className="ml-3 h-8 w-8" />
+       </a>
         </div>
       </div>
     </div>

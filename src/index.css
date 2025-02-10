@@ -11,4 +11,7 @@ header {
   html {
     scroll-behavior: smooth;
   }
-  
+
+  .text-lg {
+    font-size: 1.35rem; /* Пример размера текста */
+  }
